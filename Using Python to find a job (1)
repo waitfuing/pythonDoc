@@ -8,7 +8,7 @@ The first thing of finding a job is to figure out which kind of companies that I
 First, install Python. The popular intergrated IDE for Python in China is Anaconda. You can download Anaconda from the website below:  https://www.anaconda.com/distribution/ 
 
 Second, using Jupyter to create the first code. Open Anaconda Prompt by clicking Windows Start Menu. Then we can see a terminal like this:
-
+![image](https://github.com/waitfuing/pythonDoc/blob/master/640.webp)
 We can change the working directory. I've change it to pythonWorkspace. Then type jupyter notebook to launch Jupyter.
 
 
