@@ -5,24 +5,21 @@ After I got the dreamed visa, I had to plan a new life. The biggest difficulty w
 
 The first thing of finding a job is to figure out which kind of companies that I'd like to apply. So I open the official website and I saw many links of accredited employers. There are more than one thousand companies in the websites. So my goal is using python to get the company list and open these companies' website automatically. Therefore I can choose companies I liked and find vacacies.
 
-First, install Python. The popular intergrated IDE for Python in China is Anaconda. You can download Anaconda from the website below:  https://www.anaconda.com/distribution/ 
+First, install Python. The popular intergrated IDE for Python in China is Anaconda. You can download Anaconda from the website below: 
+https://www.anaconda.com/distribution/ 
 
 Second, using Jupyter to create the first code. Open Anaconda Prompt by clicking Windows Start Menu. Then we can see a terminal like this:
 ![image](https://github.com/waitfuing/pythonDoc/blob/master/640.webp)
+
 We can change the working directory. I've change it to pythonWorkspace. Then type jupyter notebook to launch Jupyter.
-
-
+![image](https://github.com/waitfuing/pythonDoc/blob/master/641.webp)
 
 Then we can see the jupyter working environment like this:
-
-
+![image](https://github.com/waitfuing/pythonDoc/blob/master/642.webp)
 
 Jupyter is an interactive IDE for python and it's really friendly for beginners. We can run our codes immediately to see the results and we can even change the running order.
 
-
-
 Third, using python to get the source code of a website:
-
 Click new on the top right corner of Jupyter. We need to import requests lib first, then just type requests.get(url) and we can get the source code of the address in most cases.
 
 import requests
@@ -30,7 +27,7 @@ url = 'https://www.**/accredited-employers-list'
 res = requests.get(url).text
 print(res)
 Then click run on the top menu, we can see the results we want after a few seconds like below:
-
+![image](https://github.com/waitfuing/pythonDoc/blob/master/643.webp)
 
 
 It's really simple. is it? Sometimes we can't get the result since some websites refuse unallowed browsers. So we can use headers to fake requests.
@@ -58,7 +55,7 @@ import re
 import pandas as pd
 text = '"secondary_data": .*?"url": "(.*?)"'
 info = re.findall(text, res, re.S)
-
+![image](https://github.com/waitfuing/pythonDoc/blob/master/644.webp)
 
 Then we can use info list to open these websites or store the websites to excel by iterating info variable. We need to import webbrowser lib to finish this job. But be careful! There are more than one thousand websites in info. So we'd better not open too many websites at once.
 
@@ -84,7 +81,7 @@ for i in info:
 print(address)
 print(industry)
 Then we can see exactly what we want in pair.
-
+![image](https://github.com/waitfuing/pythonDoc/blob/master/645.webp)
 
 
 
@@ -100,11 +97,11 @@ structure['Industry'] = industry
 if not os.path.exists('companies.xlsx'):
     structure.to_excel('companies.xlsx')
 Then we can see companies.xlsx in our working directory like this:
-
+![image](https://github.com/waitfuing/pythonDoc/blob/master/646.webp)
 
 
 Open it, we can see exactly what we want:
-
+![image](https://github.com/waitfuing/pythonDoc/blob/master/647.webp)
 
 
 
